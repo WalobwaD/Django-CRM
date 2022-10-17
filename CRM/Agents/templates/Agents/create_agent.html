@@ -1,7 +1,6 @@
 {% extends 'Leads/base.html' %}
-{% load static %}
 {% block title %}
-Create
+Create Agent
 {% endblock %}
 {% block content %}
 
@@ -12,16 +11,16 @@ Create
                 <p class="leading-relaxed mt-4">Poke slow-carb mixtape knausgaard, typewriter street art gentrify hammock starladder roathse. Craies vegan tousled etsy austin.</p>
             </div>
             <div class="lg:w-2/6 md:w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-                <h2 class="text-white text-lg font-medium title-font mb-5">Update {{ lead.first_name }}'s info.</h2>
+                <h2 class="text-white text-lg font-medium title-font mb-5">Create a Agent's profile</h2>
                 <form method = "POST">
                     {% csrf_token %}
                     <div class="relative mb-4">
                         <label for="full-name" class="leading-7 text-sm text-gray-400">First Name</label>
-                        <p>{{ form.first_name }}</p>
+                        <p>{{ form.as_p }}</p>
                     </div>
                     <div class="relative mb-4">
                         <label for="full-name" class="leading-7 text-sm text-gray-400">Last Name</label>
-                        <p> {{ form.last_name }}</p>
+                        <p> {{ form.organization }}</p>
                     </div>
                     <div class="relative mb-4">
                         <label for="email" class="leading-7 text-sm text-gray-400">Age</label>
@@ -31,10 +30,11 @@ Create
                         <label for="email" class="leading-7 text-sm text-gray-400">Agent</label>
                         <p>{{ form.agent }}</p>
                     </div>
-                    <button class="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Update</button>
+                    <button class="text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-green-600 rounded text-lg">Create</button>
                 </form>
                 <p class="text-xs mt-3">Literally you probably haven't heard of them jean shorts.</p>
             </div>
         </div>
     </section>
+
 {% endblock %}

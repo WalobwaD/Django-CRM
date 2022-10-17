@@ -26,7 +26,9 @@
                 <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <p class="mr-5 hover:text-white">Agent {{request.user.username}}</p>
                     <a class="mr-5 hover:text-white" href={% url 'Leads:leads_list' %}>Leads</a>
+                    {% if request.user.organizer %}
                     <a class="mr-5 hover:text-white" href={% url 'Agents:agents' %}>Agents</a>
+                    {% endif %}
                     <a class="mr-5 hover:text-white" href="{% url 'Leads:logout' %}">Logout</a>
                     
                     

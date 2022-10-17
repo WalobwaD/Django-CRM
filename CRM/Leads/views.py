@@ -6,8 +6,8 @@ from .forms import *
 from django.core.mail import send_mail
 from django.conf import settings
 from django.views.generic import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from Agents.mixins import OrganizerAndLoginRequiredMixin
 
 # Create your views here.
 

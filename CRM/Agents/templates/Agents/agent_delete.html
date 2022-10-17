@@ -1,0 +1,15 @@
+{% extends "Leads/base.html" %}
+{% block title %}
+Delete
+{% endblock %}
+
+{% block content %}
+
+    <a href="{% url 'Agents:agents' %}">Go to agents</a>
+    <h3>Are you sure you want to delete {{ agent.user }}</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}

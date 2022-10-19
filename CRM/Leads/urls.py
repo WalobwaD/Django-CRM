@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
 from .views import *
-from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.views import LoginView, LogoutView, PasswordResetDoneView, PasswordResetConfirmView
 
 
 app_name = 'Leads'
@@ -16,6 +16,9 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name="login"),
     path('logout/', LogoutView.as_view(), name="logout"),
     path('signup/', SignUp.as_view(), name="signup"),
+    path('password_reset/', PasswordResetView.as_view(), name="password_reset"),
+    path('password_reset/done/', PasswordResetDoneView.as_view(), name="password_reset_done"),
+    path('password_reset_confirm/', PasswordResetConfirmView.as_view(), name="password_reset_confirm"),
 ]
 
 if settings.DEBUG:

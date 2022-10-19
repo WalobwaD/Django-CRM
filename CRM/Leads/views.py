@@ -7,7 +7,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.views.generic import CreateView
 from django.contrib.auth.decorators import login_required
-from Agents.mixins import OrganizerAndLoginRequiredMixin
+from django.contrib.auth.views import PasswordResetView
 
 # Create your views here.
 
@@ -98,3 +98,6 @@ class SignUp(CreateView):
     
     def get_success_url(self):
         return reverse("Leads:login")
+    
+    class PasswordResetView(PasswordResetView):
+        template_name = "registration/password_reset_form.htmls"
